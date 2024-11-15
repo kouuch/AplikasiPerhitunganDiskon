@@ -78,7 +78,7 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
 
         jLabel3.setText("Diskon");
 
-        lblPersentaseDiskon.setText("persentase Diskon 0%");
+        lblPersentaseDiskon.setText("Persentase Diskon 0%");
 
         cmbDiskonTambahan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10%", "25%", "50%", "99%" }));
 
@@ -201,7 +201,7 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
         int diskon = sliderDiskon.getValue();
         
         // Update teks di JLabel untuk menampilkan persentase diskon
-        lblPersentaseDiskon.setText(diskon + "%"); // Pastikan lblPersentaseDiskon adalah nama JLabel yang menampilkan diskon
+        lblPersentaseDiskon.setText("Persentase Diskon " +diskon + "%"); // Pastikan lblPersentaseDiskon adalah nama JLabel yang menampilkan diskon
     
     }//GEN-LAST:event_sliderDiskonStateChanged
 
