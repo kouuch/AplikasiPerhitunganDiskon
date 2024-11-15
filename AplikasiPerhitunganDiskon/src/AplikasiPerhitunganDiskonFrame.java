@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -77,7 +80,7 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
 
         jLabel4.setText("persentase Diskon 0%");
 
-        cmbDiskonTambahan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbDiskonTambahan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10%", "25%", "50%", "99%" }));
 
         sliderDiskon.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -203,26 +206,50 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_sliderDiskonStateChanged
 
     private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungActionPerformed
-        // Ambil harga asli dari text field
-        double hargaAsli = Double.parseDouble(txtHargaAsli.getText());
-        
-        // Ambil nilai diskon dari slider
-        int diskon = sliderDiskon.getValue();
-        
-        // Ambil nilai diskon tambahan dari ComboBox
-        int diskonTambahan = Integer.parseInt(cmbDiskonTambahan.getSelectedItem().toString().replace("%", ""));
-        
-        // Hitung penghematan dan harga akhir
-        double totalDiskon = diskon + diskonTambahan;
-        double hemat = hargaAsli * totalDiskon / 100;
-        double hargaAkhir = hargaAsli - hemat;
-        
-        // Update hasil di text field Harga Akhir dan Hemat
-        txtHargaAkhir.setText(String.valueOf(hargaAkhir));
-        txtHemat.setText(String.valueOf(hemat));
-        
-        // Tampilkan hasil di TextArea
-        txtAreaHasil.append("Harga Asli: Rp " + hargaAsli + ", Diskon: " + totalDiskon + "%, Penghematan: Rp " + hemat + "\n");
+         // Validasi input harga asli
+        try {
+            double hargaAsli = Double.parseDouble(txtHargaAsli.getText()); // Ambil harga asli
+            if (hargaAsli <= 0) {
+                JOptionPane.showMessageDialog(null, "Harga asli harus lebih besar dari 0.");
+                return; // Hentikan eksekusi lebih lanjut jika input tidak valid
+            }
+            
+            // Ambil nilai diskon dari slider
+            int diskon = sliderDiskon.getValue();
+            
+            // Ambil nilai diskon tambahan dari ComboBox
+            int diskonTambahan = Integer.parseInt(cmbDiskonTambahan.getSelectedItem().toString().replace("%", ""));
+            
+            // Hitung penghematan dan harga akhir
+            double totalDiskon = diskon + diskonTambahan;
+            double hemat = hargaAsli * totalDiskon / 100;
+            double hargaAkhir = hargaAsli - hemat;
+            
+            // Update hasil di text field Harga Akhir dan Hemat
+            txtHargaAkhir.setText(String.valueOf(hargaAkhir));
+            txtHemat.setText(String.valueOf(hemat));
+            
+            // Tampilkan hasil di TextArea
+            txtAreaHasil.append("Harga Asli: Rp " + hargaAsli + ", Diskon: " + totalDiskon + "%, Penghematan: Rp " + hemat + "\n");
+
+            // Mengecek kode kupon jika ada
+            String kodeKupon = txtKodeKupon.getText().trim();
+            if (!kodeKupon.isEmpty()) {
+                if (kodeKupon.equals("DISKON10")) {
+                    // Diskon tambahan jika kode kupon valid
+                    double kuponHemat = hargaAsli * 10 / 100;
+                    hargaAkhir -= kuponHemat;
+                    hemat += kuponHemat;
+                    txtHargaAkhir.setText(String.valueOf(hargaAkhir));
+                    txtHemat.setText(String.valueOf(hemat));
+                    txtAreaHasil.append("Kode Kupon: DISKON10 diterapkan, Penghematan Tambahan: Rp " + kuponHemat + "\n");
+                } else {
+                    txtAreaHasil.append("Kode Kupon tidak valid.\n");
+                }
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Masukkan harga asli yang valid.");
+        }
     }//GEN-LAST:event_btnHitungActionPerformed
 
     /**
