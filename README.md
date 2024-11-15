@@ -27,32 +27,6 @@ Aplikasi ini membutuhkan beberapa perangkat lunak berikut agar dapat dijalankan 
 5. **Klik Hitung**: Tekan tombol "Hitung" untuk menghitung harga akhir setelah diskon dan penghematan.
 6. **Lihat Hasil**: Hasil perhitungan, termasuk harga akhir, penghematan, dan riwayat diskon, akan muncul di bawah tombol "Hitung".
 
-## Instalasi
+## Screenshot
 
-### Langkah 1: Clone atau Unduh Repository
-
-Clone repositori atau unduh file ZIP untuk mendapatkan kode sumber aplikasi.
-
-```bash
-git clone https://github.com/kouuch/AplikasiPerhitunganDiskon.git
-Atau unduh file ZIP dan ekstrak.
-
-Langkah 2: Buka di NetBeans
-Buka NetBeans IDE.
-Pilih File > Open Project.
-Arahkan ke direktori tempat Anda menyimpan proyek dan pilih folder proyek.
-Klik Open Project untuk memuat proyek.
-Langkah 3: Jalankan Aplikasi
-Klik kanan pada AplikasiPerhitunganDiskon.java di dalam Projects.
-Pilih Run untuk menjalankan aplikasi.
-Struktur Proyek
-Berikut adalah struktur dasar proyek:
-
-AplikasiPerhitunganDiskon.java: File utama yang berisi kode untuk antarmuka pengguna dan logika perhitungan diskon.
-JTextField untuk input harga asli, harga akhir, hemat, dan kode kupon.
-JComboBox untuk memilih diskon tambahan.
-JSlider untuk memilih persentase diskon.
-JTextArea untuk menampilkan hasil perhitungan.
-Troubleshooting
-Harga Asli Tidak Valid: Pastikan Anda memasukkan harga asli yang valid (angka lebih besar dari 0).
-Kode Kupon Tidak Diterima: Pastikan kode kupon yang dimasukkan sesuai dengan yang didukung (misalnya DISKON10).
+![t3](https://github.com/user-attachments/assets/9ba388c2-a5c6-47a4-92bb-e587b6d7e136)
