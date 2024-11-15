@@ -33,7 +33,7 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblPersentaseDiskon = new javax.swing.JLabel();
         cmbDiskonTambahan = new javax.swing.JComboBox<>();
         sliderDiskon = new javax.swing.JSlider();
         jLabel6 = new javax.swing.JLabel();
@@ -78,7 +78,7 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
 
         jLabel3.setText("Diskon");
 
-        jLabel4.setText("persentase Diskon 0%");
+        lblPersentaseDiskon.setText("persentase Diskon 0%");
 
         cmbDiskonTambahan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10%", "25%", "50%", "99%" }));
 
@@ -132,7 +132,7 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
                     .addComponent(cmbDiskonTambahan, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtHargaAsli)
                     .addComponent(txtHemat, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(lblPersentaseDiskon, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                     .addComponent(txtKodeKupon, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(38, 38, 38))
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -158,7 +158,7 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(sliderDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(lblPersentaseDiskon))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtHargaAkhir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,11 +197,11 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sliderDiskonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderDiskonStateChanged
-        // Ambil nilai diskon dari slider
-        int diskonTambahan = sliderDiskon.getValue();
+         // Ambil nilai dari slider
+        int diskon = sliderDiskon.getValue();
         
-        // Update ComboBox dengan nilai diskon tambahan
-        cmbDiskonTambahan.setSelectedItem(diskonTambahan + "%");
+        // Update teks di JLabel untuk menampilkan persentase diskon
+        lblPersentaseDiskon.setText(diskon + "%"); // Pastikan lblPersentaseDiskon adalah nama JLabel yang menampilkan diskon
     
     }//GEN-LAST:event_sliderDiskonStateChanged
 
@@ -293,12 +293,12 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblPersentaseDiskon;
     private javax.swing.JScrollPane scrollPaneHasil;
     private javax.swing.JSlider sliderDiskon;
     private javax.swing.JTextArea txtAreaHasil;

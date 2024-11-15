@@ -115,7 +115,7 @@
                       <Component id="cmbDiskonTambahan" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtHargaAsli" max="32767" attributes="0"/>
                       <Component id="txtHemat" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel4" alignment="1" pref="137" max="32767" attributes="0"/>
+                      <Component id="lblPersentaseDiskon" alignment="1" pref="137" max="32767" attributes="0"/>
                       <Component id="txtKodeKupon" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
@@ -148,7 +148,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="sliderDiskon" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblPersentaseDiskon" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -185,7 +185,7 @@
             <Property name="text" type="java.lang.String" value="Diskon"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="lblPersentaseDiskon">
           <Properties>
             <Property name="text" type="java.lang.String" value="persentase Diskon 0%"/>
           </Properties>
