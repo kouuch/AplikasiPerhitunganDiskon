@@ -77,6 +77,12 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
 
         cmbDiskonTambahan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        sliderDiskon.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sliderDiskonStateChanged(evt);
+            }
+        });
+
         jLabel6.setText("Hemat");
 
         btnHitung.setBackground(new java.awt.Color(255, 76, 76));
@@ -171,6 +177,15 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sliderDiskonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderDiskonStateChanged
+        // Ambil nilai diskon dari slider
+        int diskonTambahan = sliderDiskon.getValue();
+        
+        // Update ComboBox dengan nilai diskon tambahan
+        cmbDiskonTambahan.setSelectedItem(diskonTambahan + "%");
+    
+    }//GEN-LAST:event_sliderDiskonStateChanged
 
     /**
      * @param args the command line arguments
