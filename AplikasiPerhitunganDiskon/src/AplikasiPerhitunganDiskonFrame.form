@@ -187,7 +187,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblPersentaseDiskon">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Persentase Diskon 0%"/>
+            <Property name="text" type="java.lang.String" value="Tambahan Diskon 0%"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbDiskonTambahan">
