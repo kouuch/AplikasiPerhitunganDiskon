@@ -88,6 +88,11 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
         btnHitung.setBackground(new java.awt.Color(255, 76, 76));
         btnHitung.setFont(new java.awt.Font("Palatino Linotype", 1, 12)); // NOI18N
         btnHitung.setText("Hitung");
+        btnHitung.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHitungActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Harga Akhir");
 
@@ -186,6 +191,29 @@ public class AplikasiPerhitunganDiskonFrame extends javax.swing.JFrame {
         cmbDiskonTambahan.setSelectedItem(diskonTambahan + "%");
     
     }//GEN-LAST:event_sliderDiskonStateChanged
+
+    private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungActionPerformed
+        // Ambil harga asli dari text field
+        double hargaAsli = Double.parseDouble(txtHargaAsli.getText());
+        
+        // Ambil nilai diskon dari slider
+        int diskon = sliderDiskon.getValue();
+        
+        // Ambil nilai diskon tambahan dari ComboBox
+        int diskonTambahan = Integer.parseInt(cmbDiskonTambahan.getSelectedItem().toString().replace("%", ""));
+        
+        // Hitung penghematan dan harga akhir
+        double totalDiskon = diskon + diskonTambahan;
+        double hemat = hargaAsli * totalDiskon / 100;
+        double hargaAkhir = hargaAsli - hemat;
+        
+        // Update hasil di text field Harga Akhir dan Hemat
+        txtHargaAkhir.setText(String.valueOf(hargaAkhir));
+        txtHemat.setText(String.valueOf(hemat));
+        
+        // Tampilkan hasil di TextArea
+        txtAreaHasil.append("Harga Asli: Rp " + hargaAsli + ", Diskon: " + totalDiskon + "%, Penghematan: Rp " + hemat + "\n");
+    }//GEN-LAST:event_btnHitungActionPerformed
 
     /**
      * @param args the command line arguments
